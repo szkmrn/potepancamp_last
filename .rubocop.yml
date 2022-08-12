@@ -4,10 +4,23 @@ inherit_from:
 
 
 Rails:
-   Enabled: true
+  Enabled: true
 
 AllCops:
-    NewCops: enable
+  Exclude:      
+    - config/spring.rb
+    - db/migrate/20180921154144_transform_tax_rate_category_relation.spree.rb
+    - db/migrate/20210516054806_create_active_storage_variant_records.active_storage.rb
+    - db/samples/assets.rb
+    - vendor/**/*
+  NewCops: enable
 
-TrailingComma:
+Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+
