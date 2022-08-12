@@ -8,3 +8,6 @@ Rails:
 
 AllCops:
     NewCops: enable
+
+TrailingComma:
+  EnforcedStyleForMultiline: no_comma
