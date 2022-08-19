@@ -20,16 +20,45 @@
  *= require font-awesome
  *= require_self
  */
- header{
-    width: 100%;
- }
- .container{
+//common
+body{
+    padding-top: 0 !important;
+} 
+.container{
     width: 100%;
     height: 100%;
     margin-right:  auto;
     margin-left:  auto;
     padding:  0 15px;
     box-sizing: content-box;
+}
+@media screen and(min-width:480px){
+  .container{
+    width: 450px;
+    box-sizing: content-box;
+  }
+}
+@media screen and(min-width:768px){
+  .container{
+    width: 750px;
+    box-sizing: content-box;
+  }
+} 
+@media screen and(min-width:992px){
+  .container{
+    width: 970px;
+    box-sizing: content-box;
+  }
+}   
+@media screen and(min-width:1200px){
+  .container{
+    width: 1170px;
+    box-sizing: content-box;
+  }   
+}
+//header
+header{
+    width: 100%;
 }
 .row{
     height: 100%;
@@ -104,44 +133,92 @@
     padding-bottom: 1px;
 }
 //navbar
-.navbar-right{
-    padding-top: 18px;
+.navbar{
+    height: 90px;
+    margin-bottom: 0;
 }
-.navbar-right-list li{
+.navbar-header{
+    width: 100%;
+    box-sizing: border-box;
+}
+.navbar-brand{
+    padding-top: 30px;
+    padding-left: 0px;
+}
+@media screen and(min-width:768px){
+  .navbar-right{
+    padding-top: 30px;
+    box-sizing: border-box;
+    float: right;
+  }
+  .navbar-right-list li{
     display: inline-block;
-}
-.navbar-right-home{
+  }
+  .navbar-right-home{
     color: #47bac1;
+    font-weight: bold;
     font: 14px;
     padding: 20px 15px 33px;
-}
-.navbar-right-shop{
+  }
+  .navbar-right-shop{
     color: #252525;
+    font-weight: bold;
     font: 14px;
     padding: 20px 15px 33px;
-}
-
-@media screen and(min-width:1200px){
-  .container{
-    width: 1140px !important;
-  }   
-}
-@media screen and(max-width:992px){
-  .container{
-    width: 970px !important;
-    box-sizing: content-box;
   }
-}  
-@media screen and(max-width:480px){
-  .container{
-    width: 750px !important;
-    box-sizing: content-box;
+  .navbar-collapse{
+    display: none; 
   }
-}  
-@media screen and(max-width:480px){
-  .container{
-    width: 450px !important;
-    box-sizing: content-box;
+}
+@media screen and(max-width:768px){
+  .navbar{
+    height: 100%;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .navbar-brand{
+    padding-top: 12px;
+    padding-left: 0px;
+  }
+  .navbar-toggle{
+    background-color: #47bac1;
+    border-radius: 0;
+    margin-top: 8px;
+    margin-right: 5px;
+  }
+  .icon-bar{
+    background-color: #fff;
+    height: 4px !important;
+    width: 24px;
+  }
+  .icon-bar:nth-child(2) .icon-bar:nth-child(3){
+    padding-top: 4px;
+  }
+  .navbar-right{
+    display: none; 
+  }
+  .navbar-collapse{
+    display: none; 
+    height: 50px;
+    background-color: #fff; 
+  }
+  .navbar-list{
+    min-width: 750px;
+  }
+  .navbar-right-list li{
+    display: block;
+  }
+  .navbar-right-home{
+    color: #47bac1;
+    font-weight: bold;
+    font: 14px;
+    padding: 20px 15px 33px;
+  }
+  .navbar-right-shop{
+    color: #252525;
+    font-weight: bold;
+    font: 14px;
+    padding: 20px 15px 33px;
   }
 }
 
