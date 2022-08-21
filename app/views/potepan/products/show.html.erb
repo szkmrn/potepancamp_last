@@ -1,4 +1,16 @@
-
-  <h1>Products#show</h1>
-  <p>Find me in app/views/products/show.html.erb</p>
-<%= @product.name %>
+<div class="lightsection">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 lightsection-left">
+        <h1 class="lightsection-title"><%= @product.name %></h1>
+      </div>
+      <div class="col-xs-6 lightsection-right">
+        <div class="lightsection-box">
+          <%=link_to"home", potepan_path, class:"lightsection-link" %>
+          <span>/</span>
+          <%= @product.name %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

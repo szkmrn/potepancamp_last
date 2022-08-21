@@ -20,3 +20,41 @@
  *= require font-awesome
  *= require_self
  */
+.container{
+    height: 100%;
+}
+.row{
+    height: 100%;    
+}
+ //products/show
+.lightsection{
+    background-color: #DDDDDD;
+    height: 70px;
+ }
+.lightsection-title{
+    color: #797979;
+}
+.lightsection-link{
+    color: #797979;
+}
+.lightsection-left{
+    height: 100%;
+    display: table;
+}
+.lightsection-title{
+    display: table-cell;
+    vertical-align: middle;
+}
+.lightsection-right{
+    height: 100%;
+    text-align: right;
+    display: table;
+}
+.lightsection-box{
+    display: table-cell;
+    vertical-align: middle;
+}
+.lightsection-box{
+    font-weight: 400;
+    text-transform: uppercase;  
+}
