@@ -20,41 +20,137 @@
  *= require font-awesome
  *= require_self
  */
-.container{
+
+.container {
     height: 100%;
 }
-.row{
+.row {
     height: 100%;    
 }
  //products/show
-.lightsection{
+.lightsection {
     background-color: #DDDDDD;
     height: 70px;
  }
-.lightsection-title{
+.lightsection-title {
     color: #797979;
 }
-.lightsection-link{
+.lightsection-link {
     color: #797979;
 }
-.lightsection-left{
+.lightsection-left {
     height: 100%;
     display: table;
 }
-.lightsection-title{
+.lightsection-title {
     display: table-cell;
     vertical-align: middle;
 }
-.lightsection-right{
+.lightsection-right {
     height: 100%;
     text-align: right;
     display: table;
 }
-.lightsection-box{
+.lightsection-box {
     display: table-cell;
     vertical-align: middle;
 }
-.lightsection-box{
+.lightsection-box {
     font-weight: 400;
     text-transform: uppercase;  
+}
+//product/show/main-content
+.main-content {
+    padding: 90px 0 60px 0;
+}
+@media (min-width: 480px) {
+  .media-left{
+    width: 100%;
+    padding: 0 0 20px 0;
+  } 
+}
+@media (min-width: 768px) {
+    .media-left{
+      width: 100%;
+      padding: 0 0 30px 0;
+    } 
+  }
+@media (min-width: 992px) {
+  .media-left{
+    width: 489px;
+    padding: 0 30px 0 0;
+  } 
+}
+.thumb {
+    width: 23.3%;
+    cursor: pointer;
+    float: left;
+}
+.thumb:hover {
+    opacity: .8;
+}
+@media (max-width: 479px) {
+  .thumb {
+    margin-right: 2.1%;
+  }
+}
+@media (min-width: 480px) {
+  .thumb {
+    margin-right: 2.1%;
+  }
+}
+@media (min-width: 768px) {
+  .thumb {
+    margin-right: 2.1%;
+  }
+}
+@media (min-width: 992px) {
+  .thumb {
+    margin-right: 10px;
+  }
+}
+.media-body .list-inline {
+    margin-bottom: 30px;
+}
+.media-body h2 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+.media-body h3 {
+    font-weight: 700;
+    margin-bottom: 26px;
+    letter-spacing: 1px;
+}
+.media-body p {
+    line-height: 24px;
+    color: #797979;
+    margin-bottom: 37px;
+}
+.quick-drop {
+    margin: 0 12px 38px 0;
+    display: inline-block;
+}
+.btn-area {
+    margin-bottom: 40px;
+}
+.btn-primary {
+    background-color: #47bac1;
+    border-color: #47bac1;
+    color: #fff;
+}
+.btn-area .btn-primary {
+    width: 196px;
+    height: 55px;
+    border-radius: 0;
+    padding: 0 20px;
+    line-height: 55px;
+    text-align: left;
+    position: relative;
+}
+.fa-angle-right {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 22px;
 }

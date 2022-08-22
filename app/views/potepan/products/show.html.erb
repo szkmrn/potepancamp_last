@@ -1,4 +1,4 @@
-<div class="lightsection">
+<section class="lightsection">
   <div class="container">
     <div class="row">
       <div class="col-xs-6 lightsection-left">
@@ -13,4 +13,65 @@
       </div>
     </div>
   </div>
-</div>
+</section>
+<section class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="media">
+          <div class="media-left product-slider">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <% @product.master_images.each_with_index do |product,i| %>
+                  <div class="item <%="active"if i == 0 %>" data-slide-to="<%= i %>">
+                    <%= image_tag product.attachment(:large) %>
+                  </div> 
+                <% end %> 
+              </div>
+            </div>  
+            <div class="clearfix">
+              <div id="thumbcarousel" class="carosel slide" data-interval="false">
+                <div class="carousel-inner">
+                  <% @product.master_images.each_with_index do |product,i| %>
+                    <div data-target="#carousel" data-slide-to="<%= i %>" >
+                      <%= image_tag product.attachment(:small), class:"thumb" %>
+                    </div>
+                  <% end %> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media-body">
+            <ul class="list-inline">
+              <li>
+                <a href="#"><i class="fa fa-reply" area-hidden="true"></i>一覧ページへ戻る</a>
+              </li>
+            </ul>  
+            <h2><%= @product.name %></h2>
+            <h3><%= @product.price %></h3>
+            <p><%= @product.description %></p>
+            <span class="quick-drop">
+              <select name="guiest_id3" id="guiest_id3" class="select-drop">
+                <option value="0">S</option>
+                <option value="1">M</option>
+                <option value="2">L</option>
+                <option value="3">XL</option>
+              </select>
+            </span>
+            <span class="quick-drop resizeWidth">
+              <select name="guiest_id4" id="guiest_id4" class="select-drop">
+              <!--   <option value="0">Qty</option> -->
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </span>
+            <div class="btn-area">
+              <a href="cart_page.html" class="btn btn-primary btn-block">カートへ入れる<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>  
+        </div>    
+      </div>      
+    </div>        
+  </div>
+</section>
