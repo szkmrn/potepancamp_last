@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-6 lightsection-left">
-        <h1 class="lightsection-title"><%= @product.name %></h1>
+        <h2 class="lightsection-title"><%= @product.name %></h2>
       </div>
       <div class="col-xs-6 lightsection-right">
         <div class="lightsection-box">
@@ -48,7 +48,7 @@
               </li>
             </ul>  
             <h2><%= @product.name %></h2>
-            <h3><%= @product.price %></h3>
+            <h3>$<%= @product.price %></h3>
             <p><%= @product.description %></p>
             <span class="quick-drop">
               <select name="guiest_id3" id="guiest_id3" class="select-drop">
@@ -73,5 +73,56 @@
         </div>    
       </div>      
     </div>        
+    <div class="row products-content">
+      <div class="col-xs-12">
+        <div class="page-header">
+          <h4>関連商品</h4>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="product-box">
+          <div class="product-image clearfix">
+            <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %>
+          </div>
+          <div class="product-caption clearfix">
+          <h5>Nike Sportswear</h5>
+          <h3>199円</h3>
+          </div>
+        </div>
+      </div>   
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="product-box">
+          <div class="product-image clearfix">
+            <%= image_tag("img/products/products-02.jpg", :alt => "products-img") %>
+          </div>
+          <div class="product-caption clearfix">
+            <h5>Dip Dyed Sweater</h5>
+            <h3>249円</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="product-box">
+          <div class="product-image clearfix">
+            <%= image_tag("img/products/products-03.jpg", :alt => "products-img") %>
+          </div>
+          <div class="product-caption clearfix">
+            <h5>Scarf Ring Corner</h5>
+            <h3>179円</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="product-box">
+          <div class="product-image clearfix">
+            <%= image_tag("img/products/products-04.jpg", :alt => "products-img") %>
+          </div>
+          <div class="product-caption clearfix">
+            <h5>Sun Buddies</h5>
+            <h3>149円</h3>
+          </div>
+        </div>
+      </div>        
+    </div>
   </div>
 </section>
