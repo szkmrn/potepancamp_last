@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Products", type: :system do
   describe "GET /show" do
     let!(:product) { create(:spree_product, :skip_validate) }
-
+    
     before do
       visit potepan_product_url(product.id)
     end
