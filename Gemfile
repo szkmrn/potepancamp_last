@@ -45,12 +45,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rubocop-airbnb'
-  gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'rails-erd'
   gem 'annotate'
+  gem 'capybara'
 end
 
 group :development do
