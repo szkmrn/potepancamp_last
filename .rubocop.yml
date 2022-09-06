@@ -23,3 +23,23 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: no_comma
 
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/PercentLiteralDelimiters:
+  Exclude:
+    - 'db/migrate/20190912232417_remove_code_from_spree_promotions.spree.rb'
+    - 'db/samples/product_properties.rb'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Layout/LineLength:
+  Max: 307
