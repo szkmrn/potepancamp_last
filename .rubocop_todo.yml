@@ -9,47 +9,25 @@
 # Offense count: 1
 # Configuration parameters: Include.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
-Bundler/DuplicatedGem:
-  Exclude:
-    - 'Gemfile'
 
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: TreatCommentsAsGroupSeparators, ConsiderPunctuation, Include.
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
-Bundler/OrderedGems:
-  Exclude:
-    - 'Gemfile'
+
 
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: leading, trailing
-Layout/DotPosition:
-  Exclude:
-    - 'db/migrate/20180921154134_migrate_credit_cards_to_wallet_payment_sources.spree.rb'
-    - 'db/migrate/20180921154143_remove_order_id_from_inventory_units.spree.rb'
+
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'db/migrate/20180921154143_remove_order_id_from_inventory_units.spree.rb'
-    - 'db/migrate/20180921154159_rename_columns_for_devise.solidus_auth.rb'
 
 # Offense count: 9
 # Cop supports --auto-correct.
-Layout/EmptyLineAfterMagicComment:
-  Exclude:
-    - 'db/migrate/20190912232416_create_spree_store_credit_reasons_table.spree.rb'
-    - 'db/migrate/20190912232417_remove_code_from_spree_promotions.spree.rb'
-    - 'db/migrate/20190912232418_drop_spree_store_credit_update_reasons.spree.rb'
-    - 'db/migrate/20190912232419_add_reset_password_token_index_to_spree_users.solidus_auth.rb'
-    - 'db/migrate/20210514083116_add_apply_to_all_to_variant_property_rule.spree.rb'
-    - 'db/migrate/20210514083117_add_default_billng_flag_to_user_addresses.spree.rb'
-    - 'db/migrate/20210514083118_add_bcc_email_to_spree_stores.spree.rb'
-    - 'db/migrate/20210514083119_add_discontinue_on_to_spree_products.spree.rb'
-    - 'db/migrate/20210514083120_add_name_to_spree_addresses.spree.rb'
+
 
 # Offense count: 4
 # Cop supports --auto-correct.
