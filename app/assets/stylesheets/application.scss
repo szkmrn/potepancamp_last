@@ -21,9 +21,7 @@
  *= require_self
  */
 
-.container {
-    height: 100%;
-}
+
 .row {
     height: 100%;    
 }
@@ -33,41 +31,6 @@
 }
 .navbar-default .navbar-collapse li.active a {
     color: #252525;
-}
-//products/show
-.lightsection {
-    background-color: #f0f0f0;
-    height: 70px;
- }
-.lightsection-link {
-    color: #797979;
-}
-.lightsection-left {
-    height: 100%;
-    display: table;
-}
-.lightsection-left  h2{
-    font-weight: lighter;
-}
-.lightsection-title {
-    display: table-cell;
-    vertical-align: middle;
-    color: #797979;
-    font-weight: lighter;
-    font-size: 30px;
-}
-.lightsection-right {
-    height: 100%;
-    text-align: right;
-    display: table;
-}
-.lightsection-box {
-    display: table-cell;
-    vertical-align: middle;
-}
-.lightsection-box {
-    font-weight: 400;
-    text-transform: uppercase;  
 }
 //product/show/main-content
 .main-content {

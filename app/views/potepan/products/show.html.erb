@@ -1,19 +1,23 @@
-<section class="lightsection">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6 lightsection-left">
-        <h2 class="lightsection-title"><%= @product.name %></h2>
-      </div>
-      <div class="col-xs-6 lightsection-right">
-        <div class="lightsection-box">
-          <%= link_to "home", potepan_path, class:"lightsection-link" %>
-          <span>/</span>
-          <%= @product.name %>
-        </div>
+<section class="lightSection clearfix pageHeader">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="page-title">
+        <h2><%= @product.name %></h2>
       </div>
     </div>
+    <div class="col-xs-6">
+      <ol class="breadcrumb pull-right">
+        <li>
+        <%= link_to "home", potepan_path %>
+        </li>
+        <li class="active"><%= @product.name %></li>
+      </ol>
+    </div>
   </div>
+</div>
 </section>
+
 <section class="main-content">
   <div class="container">
     <div class="row">
