@@ -12,14 +12,14 @@ RSpec.describe "Products", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it "商品名が表示されること" do
-      expect(product.name).to eq("sweater")
+    it "商品名が表示されていること" do
+      expect(response.body).to include("sweater")
     end
-    it "商品価格が表示されること" do
-      expect(product.price).to eq(23.45)
+    it "商品価格が表示されていること" do
+      expect(response.body).to include("23.45")
     end
-    it "商品説明が表示されること" do
-      expect(product.description).to eq("very hot!")
+    it "商品詳細が表示されていること" do
+      expect(response.body).to include("very hot!")
     end
   end
 end
