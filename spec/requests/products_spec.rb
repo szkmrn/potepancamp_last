@@ -15,9 +15,11 @@ RSpec.describe "Products", type: :request do
     it "商品名が表示されていること" do
       expect(response.body).to include("sweater")
     end
+
     it "商品価格が表示されていること" do
       expect(response.body).to include("23.45")
     end
+
     it "商品詳細が表示されていること" do
       expect(response.body).to include("very hot!")
     end
