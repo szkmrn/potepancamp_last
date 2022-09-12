@@ -36,7 +36,7 @@
             <div class="clearfix">
               <div id="thumbcarousel" class="carosel slide" data-interval="false">
                 <div class="carousel-inner">
-                  <% @product.master_images.each_with_index do |product,i| %>
+                  <% @product.master_images.each_with_index do |product,  i| %>
                     <div data-target="#carousel" data-slide-to="<%= i %>" >
                       <%= image_tag product.attachment(:small), class:"thumb" %>
                     </div>
