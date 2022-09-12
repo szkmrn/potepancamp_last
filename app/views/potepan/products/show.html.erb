@@ -26,7 +26,7 @@
           <div class="media-left product-slider">
             <div id="carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
-                <% @product.master_images.each_with_index do |product,i| %>
+                <% @product.master_images.each_with_index do |product,  i| %>
                   <div class="item <%="active"if i == 0 %>" data-slide-to="<%= i %>">
                     <%= image_tag product.attachment(:large) %>
                   </div> 
