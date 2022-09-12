@@ -52,7 +52,7 @@
               </li>
             </ul>  
             <h2><%= @product.name %></h2>
-            <h3>$<%= @product.price %></h3>
+            <h3><%= number_to_currency(@product.price) %></h3>
             <p><%= @product.description %></p>
             <span class="quick-drop">
               <select name="guiest_id3" id="guiest_id3" class="select-drop">
