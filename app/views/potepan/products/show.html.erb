@@ -50,8 +50,10 @@
           <div class="media-body">
             <ul class="list-inline">
               <li>
-                <a href="#"><i class="fa fa-reply" area-hidden="true"></i>一覧ページへ戻る</a>
-              </li>
+                <%= link_to "#" do%>
+                  <i class="fa fa-reply" area-hidden="true">一覧ページへ戻る</i>
+                <% end %>
+              </li>  
             </ul>  
             <h2><%= @product.name %></h2>
             <h3><%= number_to_currency(@product.price) %></h3>
