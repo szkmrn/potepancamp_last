@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Potepan:s", type: :request do
+RSpec.describe "Potepan", type: :request do
   describe "GET potepan_path" do
     it "正常にレスポンスを返すこと" do
       get potepan_url
