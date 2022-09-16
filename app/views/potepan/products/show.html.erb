@@ -29,7 +29,7 @@
             <div id="carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <% @product.master_images.each_with_index do |product, i| %>
-                  <div class="item <%="active"if i.zero?%>" data-slide-to="<%= i %>">
+                  <div class="item <%= "active" if i.zero? %>" data-slide-to="<%= i %>">
                     <%= image_tag product.attachment(:large) %>
                   </div> 
                 <% end %> 
@@ -40,7 +40,7 @@
                 <div class="carousel-inner">
                   <% @product.master_images.each_with_index do |product, i| %>
                     <div data-target="#carousel" data-slide-to="<%= i %>" >
-                      <%= image_tag product.attachment(:small), class:"thumb" %>
+                      <%= image_tag product.attachment(:small), class: "thumb" %>
                     </div>
                   <% end %> 
                 </div>
@@ -50,7 +50,7 @@
           <div class="media-body">
             <ul class="list-inline">
               <li>
-                <%= link_to "#" do%>
+                <%= link_to "#" do %>
                   <i class="fa fa-reply" area-hidden="true">一覧ページへ戻る</i>
                 <% end %>
               </li>  
@@ -92,8 +92,8 @@
             <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %>
           </div>
           <div class="productCaption clearfix">
-          <h5>Nike Sportswear</h5>
-          <h3>199円</h3>
+            <h5>Nike Sportswear</h5>
+            <h3>199円</h3>
           </div>
         </div>
       </div>   

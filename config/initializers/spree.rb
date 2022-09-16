@@ -38,6 +38,7 @@ Spree.config do |config|
 
   # Admin:
 
+
   # Custom logo for the admin
   # config.admin_interface_logo = "logo/solidus.svg"
 

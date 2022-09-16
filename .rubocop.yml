@@ -30,3 +30,7 @@ Style/StderrPuts:
 
 Layout/LineLength:
   Max: 307
+
+Layout/EmptyLines:
+  Exclude:
+    - 'config/initializers/spree.rb'
