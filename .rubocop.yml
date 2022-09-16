@@ -8,9 +8,7 @@ Rails:
 AllCops:
   Exclude:      
     - config/spring.rb
-    - db/migrate/20180921154144_transform_tax_rate_category_relation.spree.rb
-    - db/migrate/20210516054806_create_active_storage_variant_records.active_storage.rb
-    - db/samples/assets.rb
+    - 'db/**/*'
     - vendor/**/*
   NewCops: enable
 
@@ -22,11 +20,6 @@ Style/MixinUsage:
     - 'bin/setup'
     - 'bin/update'
 
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'db/migrate/20190912232417_remove_code_from_spree_promotions.spree.rb'
-    - 'db/samples/product_properties.rb'
-
 Style/RedundantBegin:
   Exclude:
     - 'bin/yarn'
@@ -37,46 +30,3 @@ Style/StderrPuts:
 
 Layout/LineLength:
   Max: 307
-
-Layout/SpaceInsideArrayLiteralBrackets:
-  Exclude:
-    - 'db/migrate/20180922105239_create_active_storage_tables.active_storage.rb'
-    - 'db/migrate/20210514082210_create_action_mailbox_tables.action_mailbox.rb'
-    - 'db/migrate/20210514082211_create_action_text_tables.action_text.rb'
-
-Layout/EmptyLineAfterMagicComment:
-  Exclude:
-    - 'db/migrate/20190912232419_add_reset_password_token_index_to_spree_users.solidus_auth.rb'
-    - 'db/migrate/20190912232416_create_spree_store_credit_reasons_table.spree.rb'
-    - 'db/migrate/20190912232417_remove_code_from_spree_promotions.spree.rb'
-    - 'db/migrate/20190912232418_drop_spree_store_credit_update_reasons.spree.rb'
-    - 'db/migrate/20210514083116_add_apply_to_all_to_variant_property_rule.spree.rb'
-    - 'db/migrate/20210514083117_add_default_billng_flag_to_user_addresses.spree.rb'
-    - 'db/migrate/20210514083118_add_bcc_email_to_spree_stores.spree.rb'
-    - 'db/migrate/20210514083119_add_discontinue_on_to_spree_products.spree.rb'
-    - 'db/migrate/20210514083120_add_name_to_spree_addresses.spree.rb'
-
-Lint/AssignmentInCondition:
-  Exclude:
-    - 'db/migrate/20210516054805_add_service_name_to_active_storage_blobs.active_storage.rb'
-
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'db/migrate/20180921154133_create_spree_wallet_payment_sources.spree.rb'
-    - 'db/samples/products.rb'
-
-Style/TrailingCommaInArrayLiteral:
-  Exclude:
-    - 'db/seeds/potepan_suggest.rb'
-    - 'db/samples/option_values.rb'
-    - 'db/samples/taxons.rb'
-    - 'db/samples/variants.rb'  
-    - 'db/samples/products.rb'      
-
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'db/schema.rb'
-
-Layout/EmptyLines:
-  Exclude:
-    - 'db/seeds.rb'
