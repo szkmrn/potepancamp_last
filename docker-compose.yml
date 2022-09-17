@@ -28,7 +28,7 @@ services:
     environment:
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: password
-      MYSQL_HOST: mysql 
+      MYSQL_HOST: mysql
     depends_on:
       - mysql
     networks:
