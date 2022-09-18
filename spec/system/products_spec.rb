@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Products", type: :system do
   describe "GET /show" do
-    let(:product) { create(:spree_product, :skip_validate) }
+    let(:product) { create(:product, name: "T-shirts") }
 
     before do
       visit potepan_product_url(product.id)
@@ -14,15 +14,15 @@ RSpec.describe "Products", type: :system do
     end
 
     it "商品名が表示されること" do
-      expect(page).to have_content "sweater"
+      expect(page).to have_content "T-shirts"
     end
 
     it "商品価格が表示されること" do
-      expect(page).to have_content "23.45"
+      expect(page).to have_content "$19.99"
     end
 
     it "商品説明が表示されること" do
-      expect(page).to have_content "very hot!"
+      expect(page).to have_content "As seen on TV!"
     end
   end
 end
