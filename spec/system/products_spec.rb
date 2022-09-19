@@ -8,6 +8,10 @@ RSpec.describe "Products", type: :system do
       visit potepan_product_url(product.id)
     end
 
+    it "タイトルが表示されること" do
+      expect(page).to have_title "#{product.name} | BIGBAG Store"
+    end
+
     it "HOMEリンクをクリックでトップページへの遷移" do
       click_link "home"
       expect(current_path).to eq potepan_path
