@@ -8,7 +8,7 @@ RSpec.describe "Products", type: :system do
       visit potepan_product_url(product.id)
     end
 
-    it "タイトルが表示されること" do
+    it "タイトルが表示される" do
       expect(page).to have_title "#{product.name} | BIGBAG Store"
     end
 
