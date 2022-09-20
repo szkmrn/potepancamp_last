@@ -1,0 +1,35 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:      
+    - config/spring.rb
+    - 'db/**/*'
+    - vendor/**/*
+  NewCops: enable
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Layout/LineLength:
+  Max: 307
+
+Layout/EmptyLines:
+  Exclude:
+    - 'config/initializers/spree.rb'

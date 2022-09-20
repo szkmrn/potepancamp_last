@@ -25,7 +25,8 @@ RUN apt-get update                                                              
     nodejs                                                                                                                              \
     yarn                                                                                                                                \
     zip                                                                                                                                 \
-  && gem install foreman                                                                                                                \
+    vim                                                                                                                                 \
+    && gem install foreman                                                                                                              \
   && apt-get clean
 
 # Add a script to be executed every time the container starts.
