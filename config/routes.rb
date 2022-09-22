@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'categories/show'
   mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   # This line mounts Solidus's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
@@ -27,6 +26,7 @@ Rails.application.routes.draw do
     get :tokushoho,                 to: 'sample#tokushoho'
     get :privacy_policy,            to: 'sample#privacy_policy'
     resources :products, only: :show
+    resources :categories, only: :show
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
