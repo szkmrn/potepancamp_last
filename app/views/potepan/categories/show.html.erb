@@ -95,20 +95,38 @@
           </div>
         </div>
         <div class="row">
-          <% @taxon.classifications.each do |taxon_classifications| %>
-            <div class="col-sm-4 col-xs-12">
-              <div class="productBox">
-                <div class="productImage clearfix">              
-                  <%= image_tag(taxon_classifications.product.display_image.attachment(:small), :alt => "products-img") %>
+          <% if @taxon.parent_id.blank? %>
+            <% @products.each do |products| %>
+              <div class="col-sm-4 col-xs-12">
+                <div class="productBox">
+                  <div class="productImage clearfix">              
+                    <%= image_tag(products.display_image.attachment(:small), :alt => "products-img") %>
+                  </div>
+                  <div class="productCaption clearfix">
+                    <a href="single_product.html">
+                      <h5><%= products.name %></h5>
+                    </a>
+                    <h3><%= products.display_price %></h3>
+                  </div>
                 </div>
-                <div class="productCaption clearfix">
-                  <a href="single_product.html">
-                    <h5><%= taxon_classifications.product.name %></h5>
-                  </a>
-                  <h3><%= taxon_classifications.product.display_price %></h3>
+              </div> 
+            <% end %>              
+          <% else %>
+            <% @taxon.classifications.each do |taxon_classifications| %>
+              <div class="col-sm-4 col-xs-12">
+                <div class="productBox">
+                  <div class="productImage clearfix">              
+                    <%= image_tag(taxon_classifications.product.display_image.attachment(:small), :alt => "products-img") %>
+                  </div>
+                  <div class="productCaption clearfix">
+                    <a href="single_product.html">
+                      <h5><%= taxon_classifications.product.name %></h5>
+                    </a>
+                    <h3><%= taxon_classifications.product.display_price %></h3>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
