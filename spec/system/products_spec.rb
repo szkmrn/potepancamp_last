@@ -9,7 +9,7 @@ RSpec.describe "Products", type: :system do
     end
 
     it "タイトルが表示されること" do
-      expect(page).to have_title "#{product.name} | BIGBAG Store"
+      expect(page).to have_title "#{product.name} - BIGBAG Store"
     end
 
     it "HOMEリンクをクリックでトップページへの遷移" do
