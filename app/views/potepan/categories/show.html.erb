@@ -98,19 +98,19 @@
         </div>
         <div class="row">
           <% @products.each do |products| %>
-            <div class="col-sm-4 col-xs-12">
-              <div class="productBox">
-                <div class="productImage clearfix">              
-                  <%= image_tag(products.display_image.attachment(:small), :alt => "products-img") %>
-                </div>
-                <div class="productCaption clearfix">
-                  <a href="single_product.html">
+            <%= link_to potepan_product_path(products.id) do %>
+              <div class="col-sm-4 col-xs-12">
+                <div class="productBox">
+                  <div class="productImage clearfix">              
+                    <%= image_tag(products.display_image.attachment(:small), :alt => "products-img") %>
+                  </div>
+                  <div class="productCaption clearfix">
                     <h5><%= products.name %></h5>
-                  </a>
-                  <h3><%= products.display_price %></h3>
+                    <h3><%= products.display_price %></h3>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
