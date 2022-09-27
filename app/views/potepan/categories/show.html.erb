@@ -1,6 +1,5 @@
 <% provide(:title,@taxon.name) %>
 
-<!-- LIGHT SECTION -->
 <section class="lightSection clearfix pageHeader">
   <div class="container">
     <div class="row">
@@ -24,7 +23,6 @@
   </div>
 </section>
 
-<!-- MAIN CONTENT SECTION -->
 <section class="mainContent clearfix productsContent">
   <div class="container">
     <div class="row">
@@ -101,8 +99,12 @@
             <%= link_to potepan_product_path(products.id) do %>
               <div class="col-sm-4 col-xs-12">
                 <div class="productBox">
-                  <div class="productImage clearfix">              
-                    <%= image_tag(products.display_image.attachment(:small), :alt => "products-img") %>
+                  <div class="productImage clearfix">
+                    <% if products.display_image.id.blank? %>
+                      <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %> 
+                    <% else %>             
+                      <%= image_tag(products.display_image.attachment(:small), :alt => "products-img") %>
+                    <% end %>  
                   </div>
                   <div class="productCaption clearfix">
                     <h5><%= products.name %></h5>
@@ -118,7 +120,6 @@
   </div>
 </section>
 
-<!-- LIGHT SECTION -->
 <section class="lightSection clearfix">
   <div class="container">
     <div class="row">
