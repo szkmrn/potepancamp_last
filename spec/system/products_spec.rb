@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Products", type: :system do
   describe "GET /show" do
     let(:product) { create(:product, name: "T-shirts") }
+    let!(:taxon) { create(:taxon, products: [product]) }
 
     before do
       visit potepan_product_url(product.id)
@@ -15,6 +16,11 @@ RSpec.describe "Products", type: :system do
     it "HOMEリンクをクリックでトップページへの遷移" do
       click_link "home"
       expect(current_path).to eq potepan_path
+    end
+
+    it "一覧ページへ戻るをクリックでトップページへの遷移" do
+      click_link "一覧ページへ戻る"
+      expect(current_path).to eq potepan_category_path(taxon.id)
     end
 
     it "商品名が表示されること" do
