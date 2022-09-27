@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Products", type: :request do
   describe "GET /show" do
     let(:product) { create(:product) }
+    let!(:taxon) { create(:taxon, products: [product]) }
 
     before do
       get potepan_product_url(product.id)
