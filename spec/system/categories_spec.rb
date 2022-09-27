@@ -5,7 +5,8 @@ RSpec.describe "Categories", type: :system do
     let!(:taxonomy) { create(:taxonomy) }
     let(:taxon) { create(:taxon, taxonomy: taxonomy, parent: taxonomy.root) }
     let!(:product) { create(:product, taxons: [taxon]) }
-    let!(:taxon1) { create(:taxon, name: "RUBY") }
+    let!(:polo) { create(:product, name: "POLO", taxons: [taxon]) }
+    let!(:taxon1) { create(:taxon, name: "RUBY", taxonomy: taxonomy, parent: taxonomy.root) }
     let!(:product1) { create(:product, price: 23, taxons: [taxon1]) }
 
     before do
@@ -29,8 +30,9 @@ RSpec.describe "Categories", type: :system do
           expect(page).to have_content taxonomy.name
         end
 
-        it "カテゴリー名(children)が表示されること" do
+        it "カテゴリー名が表示されること" do
           expect(page).to have_content taxon.name
+          expect(page).to have_content taxon1.name
         end
 
         it "カテゴリーに属する商品の数が表示されること" do
@@ -38,12 +40,19 @@ RSpec.describe "Categories", type: :system do
           expect(page).to have_content "#{taxon.name} (#{count})"
         end
 
+        it "サイドバーに表示される商品数と一覧表示される商品の数が一致すること" do
+          count = taxon.products.count
+          expect(page.all(".productCaption").count).to be count
+        end        
+
         it "商品名が表示されること" do
           expect(page).to have_content product.name
+          expect(page).to have_content polo.name
         end
 
         it "商品価格が表示されること" do
           expect(page).to have_content product.display_price.to_s
+          expect(page).to have_content polo.display_price.to_s
         end
       end
 
