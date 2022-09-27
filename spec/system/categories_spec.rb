@@ -21,7 +21,7 @@ RSpec.describe "Categories", type: :system do
     end
 
     describe "表示テスト" do
-      context "表示されるテスト" do
+      context "表示される場合のテスト" do
         it "タイトルが表示されること" do
           expect(page).to have_title "#{taxon.name} - BIGBAG Store"
         end
@@ -43,7 +43,7 @@ RSpec.describe "Categories", type: :system do
         it "サイドバーに表示される商品数と一覧表示される商品の数が一致すること" do
           count = taxon.products.count
           expect(page.all(".productCaption").count).to be count
-        end        
+        end
 
         it "商品名が表示されること" do
           expect(page).to have_content product.name
@@ -56,7 +56,7 @@ RSpec.describe "Categories", type: :system do
         end
       end
 
-      context "表示されないテスト" do
+      context "表示されない場合のテスト" do
         it "カテゴリー外の商品名が表示されないこと" do
           expect(page).not_to have_content product1.name
         end
