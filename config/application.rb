@@ -51,5 +51,9 @@ module Potepanec
     config.generators.stylesheets    = false
     config.generators.javascripts    = false
     config.generators.helper         = false
+
+    Rails.application.config.assets.configure do |env|
+      env.export_concurrent = false
+    end
   end
 end
