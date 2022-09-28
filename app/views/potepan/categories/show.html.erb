@@ -34,8 +34,8 @@
               <ul class="nav navbar-nav side-nav">
                 <% @roots.each_with_index do |taxon_root, i| %>
                   <li>
-                    <a data-toggle="collapse" data-target="#<%= i %>"><%= taxon_root.name %><i class="fa fa-plus"></i></a>
-                    <ul id="<%= i %>" class="collapse collapseItem">
+                    <a data-toggle="collapse" data-target="#taxonomy_<%= i %>"><%= taxon_root.name %><i class="fa fa-plus"></i></a>
+                    <ul id="taxonomy_<%= i %>" class="collapse collapseItem">
                       <% taxon_root.leaves.each do |taxon_leave| %>
                         <li>
                           <%= link_to potepan_category_path(taxon_leave.id) do %>
