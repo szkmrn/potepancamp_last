@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Categories", type: :system do
   describe "GET /show" do
-    let!(:taxonomy) { create(:taxonomy) }
+    let(:taxonomy) { create(:taxonomy) }
     let(:taxon) { create(:taxon, taxonomy: taxonomy, parent: taxonomy.root) }
     let!(:product) { create(:product, taxons: [taxon]) }
     let!(:polo) { create(:product, name: "POLO", taxons: [taxon]) }
