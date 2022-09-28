@@ -14,6 +14,11 @@ RSpec.describe "Categories", type: :system do
     end
 
     describe "リンクテスト" do
+      it "カテゴリー名をクリックで該当の商品一覧に遷移すること" do
+        click_link taxon.name
+        expect(current_path).to eq potepan_category_path(taxon.id)
+      end
+
       it "一覧表示の商品をクリックで商品詳細ページへ遷移" do
         click_link product.name
         expect(current_path).to eq potepan_product_path(product.id)
@@ -35,7 +40,7 @@ RSpec.describe "Categories", type: :system do
           expect(page).to have_content taxon1.name
         end
 
-        it "カテゴリーに属する商品の数が表示されること" do 
+        it "カテゴリーに属する商品の数が表示されること" do
           expect(page).to have_content "#{taxon.name} (#{taxon.products.count})"
         end
 
