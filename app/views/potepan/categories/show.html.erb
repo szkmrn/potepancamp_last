@@ -32,16 +32,16 @@
           <div class="panel-body">
             <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
               <ul class="nav navbar-nav side-nav">
-                <% @taxons.roots.each_with_index do |taxon_roots, i| %>
+                <% @roots.each_with_index do |taxon_root, i| %>
                   <li>
-                    <a data-toggle="collapse" data-target="#<%= i %>"><%= taxon_roots.name %><i class="fa fa-plus"></i></a>
+                    <a data-toggle="collapse" data-target="#<%= i %>"><%= taxon_root.name %><i class="fa fa-plus"></i></a>
                     <ul id="<%= i %>" class="collapse collapseItem">
-                      <% taxon_roots.leaves.each do |taxon_roots_leaves| %>
+                      <% taxon_root.leaves.each do |taxon_leave| %>
                         <li>
-                          <%= link_to potepan_category_path(taxon_roots_leaves.id) do %>
+                          <%= link_to potepan_category_path(taxon_leave.id) do %>
                             <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <%= taxon_roots_leaves.name %>
-                            <span>(<%= taxon_roots_leaves.products.count %>)</span>
+                            <%= taxon_leave.name %>
+                            <span>(<%= taxon_leave.products.count %>)</span>
                           <% end %>
                         </li>
                       <% end %>

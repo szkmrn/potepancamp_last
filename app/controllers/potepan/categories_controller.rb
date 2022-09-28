@@ -3,5 +3,6 @@ class Potepan::CategoriesController < ApplicationController
     @taxon = Spree::Taxon.find(params[:id])
     @products = @taxon.all_products
     @taxons = Spree::Taxon.all
+    @roots = @taxons.roots
   end
 end
