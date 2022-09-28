@@ -35,14 +35,12 @@ RSpec.describe "Categories", type: :system do
           expect(page).to have_content taxon1.name
         end
 
-        it "カテゴリーに属する商品の数が表示されること" do
-          count = taxon.products.count
-          expect(page).to have_content "#{taxon.name} (#{count})"
+        it "カテゴリーに属する商品の数が表示されること" do 
+          expect(page).to have_content "#{taxon.name} (#{taxon.products.count})"
         end
 
         it "サイドバーに表示される商品数と一覧表示される商品の数が一致すること" do
-          count = taxon.products.count
-          expect(page.all(".productCaption").count).to be count
+          expect(page.all(".productCaption").count).to be taxon.products.count
         end
 
         it "商品名が表示されること" do
