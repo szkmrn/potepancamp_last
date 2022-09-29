@@ -13,6 +13,11 @@ RSpec.describe "Products", type: :request do
       expect(response).to have_http_status(:success)
     end
 
+    it "商品一覧ページのhttpリクエストが正しいこと" do
+      get potepan_category_path(taxon.id)
+      expect(response).to have_http_status(:success)
+    end
+
     it "商品名が表示されていること" do
       expect(response.body).to include product.name
     end
