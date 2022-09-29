@@ -13,7 +13,7 @@
             <a><%= link_to "Home", potepan_path %></a>
           </li>
           <li>
-            <a href="#">shop</a>
+            <a><%= link_to "shop", "#" %></a>
           </li>
           <li class="active"><%= @taxon.name %></li>
         </ol>
@@ -35,12 +35,12 @@
                   <li>
                     <a data-toggle="collapse" data-target="#taxonomy_<%= i %>"><%= taxonomy.name %><i class="fa fa-plus"></i></a>
                     <ul id="taxonomy_<%= i %>" class="collapse collapseItem">
-                      <% taxonomy.leaves.each do |taxonomy_leaf| %>
+                      <% taxonomy.leaves.each do |taxon| %>
                         <li>
-                          <%= link_to potepan_category_path(taxonomy_leaf.id) do %>
+                          <%= link_to potepan_category_path(taxon.id) do %>
                             <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <%= taxonomy_leaf.name %>
-                            <span>(<%= taxonomy_leaf.products.count %>)</span>
+                            <%= taxon.name %>
+                            <span>(<%= taxon.products.count %>)</span>
                           <% end %>
                         </li>
                       <% end %>
@@ -94,20 +94,20 @@
           </div>
         </div>
         <div class="row">
-          <% @products.each do |products| %>
-            <%= link_to potepan_product_path(products.id) do %>
+          <% @products.each do |product| %>
+            <%= link_to potepan_product_path(product.id) do %>
               <div class="col-sm-4 col-xs-12">
                 <div class="productBox">
                   <div class="productImage clearfix">
-                    <% if products.display_image.id.blank? %>
+                    <% if product.display_image.id.blank? %>
                       <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %> 
                     <% else %>             
-                      <%= image_tag(products.display_image.attachment(:small), :alt => "products-img") %>
+                      <%= image_tag(product.display_image.attachment(:small), :alt => "products-img") %>
                     <% end %>  
                   </div>
                   <div class="productCaption clearfix">
-                    <h5><%= products.name %></h5>
-                    <h3><%= products.display_price %></h3>
+                    <h5><%= product.name %></h5>
+                    <h3><%= product.display_price %></h3>
                   </div>
                 </div>
               </div>
