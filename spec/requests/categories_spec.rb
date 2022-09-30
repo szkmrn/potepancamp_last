@@ -10,7 +10,7 @@ RSpec.describe "Categories", type: :request do
     let!(:product1) { create(:product, price: 23, taxons: [taxon1]) }
 
     before do
-      get potepan_category_url(taxon.id)
+      get potepan_category_path(taxon.id)
     end
 
     it "returns http success" do

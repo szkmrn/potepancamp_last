@@ -6,7 +6,7 @@ RSpec.describe "Products", type: :request do
     let!(:taxon) { create(:taxon, products: [product]) }
 
     before do
-      get potepan_product_url(product.id)
+      get potepan_product_path(product.id)
     end
 
     it "returns http success" do

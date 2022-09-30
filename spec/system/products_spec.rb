@@ -6,7 +6,7 @@ RSpec.describe "Products", type: :system do
     let!(:taxon) { create(:taxon, products: [product]) }
 
     before do
-      visit potepan_product_url(product.id)
+      visit potepan_product_path(product.id)
     end
 
     it "タイトルが表示されること" do

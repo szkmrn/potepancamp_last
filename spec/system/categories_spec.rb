@@ -10,7 +10,7 @@ RSpec.describe "Categories", type: :system do
     let!(:product1) { create(:product, price: 23, taxons: [taxon1]) }
 
     before do
-      visit potepan_category_url(taxon.id)
+      visit potepan_category_path(taxon.id)
     end
 
     describe "リンクテスト" do
