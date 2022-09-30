@@ -31,7 +31,7 @@
           <div class="panel-body">
             <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
               <ul class="nav navbar-nav side-nav">
-                <% @roots.each_with_index do |taxonomy, i| %>
+                <% @taxonomies.each_with_index do |taxonomy, i| %>
                   <li>
                     <a data-toggle="collapse" data-target="#taxonomy_<%= i %>"><%= taxonomy.name %><i class="fa fa-plus"></i></a>
                     <ul id="taxonomy_<%= i %>" class="collapse collapseItem">
@@ -101,9 +101,9 @@
                   <div class="productImage clearfix">
                     <% if product.display_image.id.blank? %>
                       <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %> 
-                    <% else %>             
+                    <% else %>       
                       <%= image_tag(product.display_image.attachment(:small), :alt => "products-img") %>
-                    <% end %>  
+                    <% end %>
                   </div>
                   <div class="productCaption clearfix">
                     <h5><%= product.name %></h5>
