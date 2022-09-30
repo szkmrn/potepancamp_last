@@ -45,7 +45,7 @@ RSpec.describe "Categories", type: :system do
         end
 
         it "サイドバーに表示される商品数と一覧表示される商品の数が一致すること" do
-          expect(page.all(".productCaption").count).to be taxon.products.count
+          expect(page.all(".productCaption").count).to be (page.all(".productBox").count)
         end
 
         it "商品名が表示されること" do
