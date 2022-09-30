@@ -19,13 +19,12 @@ RSpec.describe "Categories", type: :request do
 
     describe "表示テスト" do
       context "表示される場合のテスト" do
-        it "カテゴリー名(root)が表示されること" do
-          expect(response.body).to include taxonomy.name
-        end
-
         it "カテゴリー名が表示されること" do
-          expect(response.body).to include taxon.name
-          expect(response.body).to include taxon1.name
+          within(".mainContent") do
+            expect(response.body).to include taxonomy.name
+            expect(response.body).to include taxon.name
+            expect(response.body).to include taxon1.name
+          end
         end
 
         it "商品名が表示されること" do

@@ -31,13 +31,12 @@ RSpec.describe "Categories", type: :system do
           expect(page).to have_title "#{taxon.name} - BIGBAG Store"
         end
 
-        it "カテゴリー名(root)が表示されること" do
-          expect(page).to have_content taxonomy.name
-        end
-
         it "カテゴリー名が表示されること" do
-          expect(page).to have_content taxon.name
-          expect(page).to have_content taxon1.name
+          within(".mainContent") do
+            expect(page).to have_content taxonomy.name
+            expect(page).to have_content taxon.name
+            expect(page).to have_content taxon1.name
+          end
         end
 
         it "カテゴリーに属する商品の数が表示されること" do
@@ -45,7 +44,7 @@ RSpec.describe "Categories", type: :system do
         end
 
         it "サイドバーに表示される商品数と一覧表示される商品の数が一致すること" do
-          expect(page.all(".productCaption").count).to be (page.all(".productBox").count)
+          expect(page.all(".productCaption").count).to be page.all(".productBox").count
         end
 
         it "商品名が表示されること" do
