@@ -4,9 +4,14 @@ RSpec.describe "Products", type: :system do
   describe "GET /show" do
     let(:product) { create(:product, name: "T-shirts") }
     let!(:taxon) { create(:taxon, products: [product]) }
+    let(:image) { create(:image) }
 
     before do
+      product.images << image
       visit potepan_product_path(product.id)
+      # 画像URL取得が上手くいかない問題への対応
+      # https://mng-camp.potepan.com/curriculums/document-for-final-task-2#notes-of-image-test
+      ActiveStorage::Current.host = page.current_host
     end
 
     it "タイトルが表示されること" do
@@ -33,6 +38,13 @@ RSpec.describe "Products", type: :system do
 
     it "商品説明が表示されること" do
       expect(page).to have_content "As seen on TV!"
+    end
+
+    it "商品画像が表示されること" do
+      product.images.reload.each do |image|
+        expect(page).to have_selector "img[src='#{image.attachment(:large)}']"
+        expect(page).to have_selector "img[src='#{image.attachment(:small)}']"
+      end
     end
   end
 end

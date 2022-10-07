@@ -7,9 +7,14 @@ RSpec.describe "Categories", type: :system do
     let!(:taxon_product) { create(:product, taxons: [taxonomy_taxon]) }
     let!(:taxonomy_taxon1) { create(:taxon, name: "RUBY", taxonomy: taxonomy, parent: taxonomy.root) }
     let!(:taxon1_product) { create(:product, price: 23, taxons: [taxonomy_taxon1]) }
+    let(:image) { create(:image) }
 
     before do
+      taxon_product.images << image
       visit potepan_category_path(taxonomy_taxon.id)
+      # 画像URL取得が上手くいかない問題への対応
+      # https://mng-camp.potepan.com/curriculums/document-for-final-task-2#notes-of-image-test
+      ActiveStorage::Current.host = page.current_host
     end
 
     describe "リンクテスト" do
@@ -62,6 +67,12 @@ RSpec.describe "Categories", type: :system do
 
         it "カテゴリー外の商品価格が表示されないこと" do
           expect(page).not_to have_content taxon1_product.display_price.to_s
+        end
+      end
+
+      it "画像テスト" do
+        taxon_product.reload.images.each do |image|
+          expect(page).to have_selector "img[src$='#{image.attachment(:small)}']"
         end
       end
     end
