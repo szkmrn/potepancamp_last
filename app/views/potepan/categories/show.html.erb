@@ -35,8 +35,7 @@
                   <li>
                     <a data-toggle="collapse" data-target="#taxonomy_<%= i %>"><%= taxonomy.name %><i class="fa fa-plus"></i></a>
                     <ul id="taxonomy_<%= i %>" class="collapse collapseItem">
-                      <% @taxons.each do |taxon| %>
-                        <% if taxon.taxonomy_id == taxonomy.id %>
+                      <% taxonomy.taxons.leaves.each do |taxon| %>
                         <li>
                           <%= link_to potepan_category_path(taxon.id) do %>
                             <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -44,7 +43,6 @@
                             <span>(<%= taxon.products.size %>)</span>
                           <% end %>
                         </li>
-                        <% end %>
                       <% end %>
                     </ul>
                   </li>
@@ -100,12 +98,8 @@
             <%= link_to potepan_product_path(product.id) do %>
               <div class="col-sm-4 col-xs-12">
                 <div class="productBox">
-                  <div class="productImage clearfix">
-                    <% if product.display_image.id.blank? %>
-                      <%= image_tag("img/products/products-01.jpg", :alt => "products-img") %> 
-                    <% else %>       
-                      <%= image_tag(product.display_image.attachment(:small), :alt => "products-img") %>
-                    <% end %>
+                  <div class="productImage clearfix">  
+                    <%= image_tag product.images.first.attachment(:small), :alt => "products-img" %>                 
                   </div>
                   <div class="productCaption clearfix">
                     <h5><%= product.name %></h5>
