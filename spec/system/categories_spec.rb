@@ -58,6 +58,12 @@ RSpec.describe "Categories", type: :system do
         it "商品価格が表示されること" do
           expect(page).to have_content taxon_product.display_price.to_s
         end
+
+        it "画像テスト" do
+          taxon_product.reload.images.each do |image|
+            expect(page).to have_selector "img[src$='#{image.attachment(:small)}']"
+          end
+        end
       end
 
       context "表示されない場合のテスト" do
@@ -67,12 +73,6 @@ RSpec.describe "Categories", type: :system do
 
         it "カテゴリー外の商品価格が表示されないこと" do
           expect(page).not_to have_content taxon1_product.display_price.to_s
-        end
-      end
-
-      it "画像テスト" do
-        taxon_product.reload.images.each do |image|
-          expect(page).to have_selector "img[src$='#{image.attachment(:small)}']"
         end
       end
     end
