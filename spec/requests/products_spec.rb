@@ -4,7 +4,7 @@ RSpec.describe "Products", type: :request do
   describe "GET /show" do
     let(:product) { create(:product) }
     let!(:taxon) { create(:taxon, products: [product]) }
-    let(:image) { create(:image)}
+    let(:image) { create(:image) }
 
     before do
       product.images << image
@@ -34,7 +34,7 @@ RSpec.describe "Products", type: :request do
       product.images.reload.each do |image|
         expect(response.body).to include image.attachment(:large)
         expect(response.body).to include image.attachment(:small)
-      end    
+      end
     end
   end
 end
