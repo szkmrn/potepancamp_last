@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe "Categories", type: :system do
   describe "GET /show" do
     let(:taxonomy) { create(:taxonomy) }
-    let(:taxon) { create(:taxon, taxonomy: taxonomy, parent_id: taxonomy.root) }
+    let(:taxon) { create(:taxon, taxonomy: taxonomy, parent: taxonomy.root) }
     let(:taxon_product) { create(:product, taxons: [taxon]) }
     let!(:taxon1) { create(:taxon, name: "RUBY", taxonomy: taxonomy, parent: taxonomy.root) }
     let!(:taxon1_product) { create(:product, price: 23, taxons: [taxon1]) }
-    let(:image) { create(:image) }
+    let(:taxon_product_image) { create(:image) }
+    let(:taxon1_product_image) { create(:image) }
 
     before do
-      taxon_product.images << image
+      taxon_product.images << taxon_product_image
+      taxon1_product.images << taxon1_product_image
       visit potepan_category_path(taxon.id)
       # 画像URL取得が上手くいかない問題への対応
       # https://mng-camp.potepan.com/curriculums/document-for-final-task-2#notes-of-image-test
@@ -19,8 +21,8 @@ RSpec.describe "Categories", type: :system do
 
     describe "リンクテスト" do
       it "カテゴリー名をクリックで該当の商品一覧に遷移すること" do
-        click_link taxon.name
-        expect(current_path).to eq potepan_category_path(taxon.id)
+        click_link taxon1.name
+        expect(current_path).to eq potepan_category_path(taxon1.id)
       end
 
       it "一覧表示の商品をクリックで商品詳細ページへ遷移" do
