@@ -17,7 +17,7 @@ RSpec.describe "Categories", type: :request do
       ActiveStorage::Current.host = request.base_url
     end
 
-    it "returns http success" do
+    it "httpリクエストが成功すること" do
       expect(response).to have_http_status(:success)
     end
 
