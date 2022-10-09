@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Products", type: :system do
   describe "GET /show" do
-    let(:product) { create(:product, name: "T-shirts") }
-    let!(:taxon) { create(:taxon, products: [product]) }
+    let(:product) { create(:product, name: "T-shirts", taxons: [taxon]) }
+    let!(:taxon) { create(:taxon) }
     let(:image) { create(:image) }
 
     before do
