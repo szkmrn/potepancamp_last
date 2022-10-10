@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Products", type: :system do
   describe "GET /show" do
     let(:product) { create(:product, name: "T-shirts", taxons: [taxon]) }
-    let!(:taxon) { create(:taxon) }
+    let(:taxon) { create(:taxon) }
     let(:image) { create(:image) }
 
     before do
@@ -41,7 +41,7 @@ RSpec.describe "Products", type: :system do
     end
 
     it "商品画像が表示されること" do
-      product.images.reload.each do |image|
+      product.reload.images.all? do |image|
         expect(page).to have_selector "img[src='#{image.attachment(:large)}']"
         expect(page).to have_selector "img[src='#{image.attachment(:small)}']"
       end

@@ -5,8 +5,8 @@ RSpec.describe "Categories", type: :request do
     let(:taxonomy) { create(:taxonomy) }
     let(:taxon) { create(:taxon, taxonomy: taxonomy, parent: taxonomy.root) }
     let(:taxon_product) { create(:product, taxons: [taxon]) }
-    let!(:taxon1) { create(:taxon, name: "RUBY", taxonomy: taxonomy, parent: taxonomy.root) }
-    let!(:taxon1_product) { create(:product, price: 23, taxons: [taxon1]) }
+    let(:taxon1) { create(:taxon, name: "RUBY", taxonomy: taxonomy, parent: taxonomy.root) }
+    let(:taxon1_product) { create(:product, price: 23, taxons: [taxon1]) }
     let(:image) { create(:image) }
 
     before do
@@ -51,7 +51,7 @@ RSpec.describe "Categories", type: :request do
       end
 
       it "画像テスト" do
-        taxon_product.reload.images.each do |image|
+        taxon_product.reload.images.all? do |image|
           expect(response.body).to include image.attachment(:small)
         end
       end

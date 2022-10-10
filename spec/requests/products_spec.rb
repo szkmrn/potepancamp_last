@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Products", type: :request do
   describe "GET /show" do
     let(:product) { create(:product, taxons: [taxon]) }
-    let!(:taxon) { create(:taxon) }
+    let(:taxon) { create(:taxon) }
     let(:image) { create(:image) }
 
     before do
@@ -31,7 +31,7 @@ RSpec.describe "Products", type: :request do
     end
 
     it "商品画像が表示されていること" do
-      product.images.reload.each do |image|
+      product.reload.images.all? do |image|
         expect(response.body).to include image.attachment(:large)
         expect(response.body).to include image.attachment(:small)
       end
