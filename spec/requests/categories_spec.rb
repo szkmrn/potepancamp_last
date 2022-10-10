@@ -15,7 +15,6 @@ RSpec.describe "Categories", type: :request do
       # 画像URL取得が上手くいかない問題への対応
       # https://mng-camp.potepan.com/curriculums/document-for-final-task-2#notes-of-image-test
       ActiveStorage::Current.host = request.base_url
-      binding.pry
     end
 
     it "httpリクエストが成功すること" do
