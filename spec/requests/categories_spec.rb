@@ -6,7 +6,7 @@ RSpec.describe "Categories", type: :request do
     let(:taxon) { create(:taxon, taxonomy: taxonomy, parent: taxonomy.root) }
     let(:taxon_product) { create(:product, taxons: [taxon]) }
     let(:taxon1) { create(:taxon, name: "RUBY", taxonomy: taxonomy, parent: taxonomy.root) }
-    let(:taxon1_product) { create(:product, price: 23, taxons: [taxon1]) }
+    let!(:taxon1_product) { create(:product, price: 23, taxons: [taxon1]) }
     let(:image) { create(:image) }
 
     before do
@@ -15,6 +15,7 @@ RSpec.describe "Categories", type: :request do
       # 画像URL取得が上手くいかない問題への対応
       # https://mng-camp.potepan.com/curriculums/document-for-final-task-2#notes-of-image-test
       ActiveStorage::Current.host = request.base_url
+      binding.pry
     end
 
     it "httpリクエストが成功すること" do
