@@ -5,7 +5,7 @@ module ApplicationHelper
     if page_title.blank?
       BASE_TITLE
     else
-      "#{page_title} | #{BASE_TITLE}"
+      "#{page_title} - #{BASE_TITLE}"
     end
   end
 end
